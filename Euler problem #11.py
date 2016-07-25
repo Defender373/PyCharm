@@ -7,12 +7,11 @@ print(Euler[15][12])
 f = open('Euler11numbers.txt', 'r')
 
 print(f.readline())
-# f.readline()[4] gets the 4th index
+# f.readline()[4] gets the character at index 4 in the line that was just read
 
-# for x in range 20  for each row
-i = 0
-# substring from i to i+1 then add 3 to i. i += 3. Then repeat
+# ALGORITHM
+# for x in range 20 to get each line, which represents a row in the 2x2 array
 
-int()  # make sure to cast the strings to ints
+    # for y in range(0,20,3) counts from 0 to 20 by 3's allowing us to skip spaces
 
-# Euler[x][i] = substring i to i+1
+        # Euler[x][i] = substring i to i+1 cast to an int; int()
