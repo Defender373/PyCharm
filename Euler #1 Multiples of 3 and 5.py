@@ -1,4 +1,4 @@
-# attempt 1
+# attempt 2
 def getsum():
     sum = 0
 
