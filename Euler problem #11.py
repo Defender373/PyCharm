@@ -16,6 +16,7 @@ for x in range(20):
     # for y in range(0,20,3) counts from 0 to 20 by 3's allowing us to skip spaces
     for y in range(0, 20, 3):
         # Euler[x][y] = substring y to y+1 cast to an int; int()
+        print(line[y:y + 2])
         Euler[x][y] = int(line[y:y + 2])
 
 print("test")
