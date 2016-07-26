@@ -21,38 +21,46 @@ print(f.readline())
 #call up on Euler[10][11], up(Euler, 10, 11)
 #call left on Euler[10][11], left(Euler[10], 11)
 
-def up(self, array, x_index, y_index):
-    return array[y_index][x_index]*array[y_index+1][x_index]*array[y_index+2][x_index]*array[y_index+3][x_index]
+def up(self, array, column_index, row_index):
+    return array[row_index][column_index] * array[row_index + 1][column_index] * array[row_index + 2][column_index] * \
+           array[row_index + 3][column_index]
 
-def down(self, array, x_index, y_index):
+
+def down(self, array, column_index, row_index):
     product = 0
 
     return product
 
-def left(self, array, x_index):
-    return array[x_index]*array[x_index-1]*array[x_index-2]*array[x_index-3]
 
-def right(self, array, x_index):
+def left(self, array, column_index):
+    return array[column_index] * array[column_index - 1] * array[column_index - 2] * array[column_index - 3]
+
+
+def right(self, array, column_index):
     product = 0
 
     return product
 
-def up_left(self, array, x_index, y_index):
+
+def up_left(self, array, column_index, row_index):
     product = 0
 
     return product
 
-def up_right(self, array, x_index, y_index):
+
+def up_right(self, array, column_index, row_index):
     product = 0
 
     return product
 
-def down_left(self, array, x_index, y_index):
+
+def down_left(self, array, column_index, row_index):
     product = 0
 
     return product
 
-def down_right(self, array, x_index, y_index):
+
+def down_right(self, array, column_index, row_index):
     product = 0
 
     return product
