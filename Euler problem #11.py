@@ -13,12 +13,13 @@ f = open('Euler11numbers.txt', 'r')
 # for x in range 20 to get each line, which represents a row in the 2x2 array
 for x in range(20):
     line = f.readline()
-    for y in range(0, 20, 3):
-        Euler[x][y]
-
     # for y in range(0,20,3) counts from 0 to 20 by 3's allowing us to skip spaces
-
+    for y in range(0, 20, 3):
         # Euler[x][y] = substring y to y+1 cast to an int; int()
+        Euler[x][y] = int(line[y:y + 2])
+
+print("test")
+
 
 # Idea, build functions to calculate the product in each of the 8 directions, I've done up and left
 
