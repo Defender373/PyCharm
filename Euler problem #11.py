@@ -109,8 +109,31 @@ for y in range(20):
                 max = tester
 
         if (x <= 15 and y <= 16):
-            tester = down_right(Euler, y, x)
+            tester = down_right(Euler, x, y)
             if (tester > max):
                 max = tester
 
 print(max, '\n', (time.time() - start_time) * 1000)
+
+for y in range(20):
+    for x in range(20):
+
+        if (x <= 16):
+            tester = right(Euler[y], x)
+            if (tester > max):
+                max = tester
+
+        if (y <= 16):
+            tester = down(Euler, x, y)
+            if (tester > max):
+                max = tester
+
+        if (y >= 3 and x <= 16):
+            tester = up_right(Euler, x, y)
+            if (tester > max):
+                max = tester
+
+        if (x <= 15 and y <= 16):
+            tester = down_right(Euler, x, y)
+            if (tester > max):
+                max = tester
