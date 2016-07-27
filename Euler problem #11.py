@@ -71,22 +71,22 @@ print("Hi")
 tester = 0
 for x in range(20):
     for y in range(20):
-        if (x >= 3):
+        if (y >= 3):
             tester = left(Euler[x], y)
             if (tester > max):
                 max = tester
 
-        if (x <= 15):
+        if (y <= 15):
             tester = right(Euler[x], y)
             if (tester > max):
                 max = tester
 
-        if (y >= 3):
+        if (x >= 3):
             tester = up(Euler, x, y)
             if (tester > max):
                 max = tester
 
-        if (y <= 15):
+        if (x <= 15):
             tester = down(Euler, x, y)
             if (tester > max):
                 max = tester
@@ -96,12 +96,12 @@ for x in range(20):
             if (tester > max):
                 max = tester
 
-        if (y >= 3 and x <= 15):
+        if (x >= 3 and y <= 15):
             tester = up_right(Euler, x, y)
             if (tester > max):
                 max = tester
 
-        if (y <= 15 and x >= 3):
+        if (x <= 15 and y >= 3):
             tester = down_left(Euler, x, y)
             if (tester > max):
                 max = tester
