@@ -11,12 +11,12 @@ f = open('Euler11numbers.txt', 'r')
 
 # ALGORITHM
 # for x in range 20 to get each line, which represents a row in the 2x2 array
-for x in range(20):
+for y in range(20):
     line = f.readline()
     # for y in range(0,20,3) counts from 0 to 20 by 3's allowing us to skip spaces
-    for y in range(0, 60, 3):
+    for x in range(0, 60, 3):
         # Euler[x][y] = substring y to y+1 cast to an int; int()
-        Euler[x][int(y / 3)] = int(line[y:y + 2])
+        Euler[y][int(x / 3)] = int(line[x:x + 2])
 
 
 
@@ -69,45 +69,45 @@ def down_right(array, column_index, row_index):
 max = 0
 print("Hi")
 tester = 0
-for x in range(20):
-    for y in range(20):
-        if (y >= 3):
-            tester = left(Euler[x], y)
-            if (tester > max):
-                max = tester
-
-        if (y <= 15):
-            tester = right(Euler[x], y)
-            if (tester > max):
-                max = tester
-
+for y in range(20):
+    for x in range(20):
         if (x >= 3):
-            tester = up(Euler, x, y)
+            tester = left(Euler[y], x)
             if (tester > max):
                 max = tester
 
         if (x <= 15):
-            tester = down(Euler, x, y)
+            tester = right(Euler[y], x)
             if (tester > max):
                 max = tester
 
-        if (y >= 3 and x >= 3):
-            tester = up_left(Euler, x, y)
+        if (y >= 3):
+            tester = up(Euler, y, x)
             if (tester > max):
                 max = tester
 
-        if (x >= 3 and y <= 15):
-            tester = up_right(Euler, x, y)
+        if (y <= 15):
+            tester = down(Euler, y, x)
             if (tester > max):
                 max = tester
 
-        if (x <= 15 and y >= 3):
-            tester = down_left(Euler, x, y)
+        if (x >= 3 and y >= 3):
+            tester = up_left(Euler, y, x)
             if (tester > max):
                 max = tester
 
-        if (y <= 15 and x <= 15):
-            tester = down_right(Euler, x, y)
+        if (y >= 3 and x <= 15):
+            tester = up_right(Euler, y, x)
+            if (tester > max):
+                max = tester
+
+        if (y <= 15 and x >= 3):
+            tester = down_left(Euler, y, x)
+            if (tester > max):
+                max = tester
+
+        if (x <= 15 and y <= 15):
+            tester = down_right(Euler, y, x)
             if (tester > max):
                 max = tester
 
