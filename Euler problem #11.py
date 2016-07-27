@@ -48,7 +48,7 @@ def down_right(array, column_index, row_index):
            array[row_index + 2][column_index - 2] * array[row_index + 3][column_index - 3]
 
 
-start_time = time.time()
+
 
 Euler = [[-1] * 20 for x in range(20)]
 
@@ -69,8 +69,10 @@ for y in range(20):
 
 
 max = 0
-print("Hi")
 tester = 0
+
+start_time = time.time()
+
 for y in range(20):
     for x in range(20):
         if (x >= 3):
@@ -115,6 +117,11 @@ for y in range(20):
 
 print(max, '\n', (time.time() - start_time) * 1000)
 
+max = 0
+tester = 0
+
+start_time = time.time()
+
 for y in range(20):
     for x in range(20):
 
@@ -137,3 +144,5 @@ for y in range(20):
             tester = down_right(Euler, x, y)
             if (tester > max):
                 max = tester
+
+print(max, '\n', (time.time() - start_time) * 1000)
