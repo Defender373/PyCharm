@@ -73,43 +73,43 @@ print("Hi")
 tester = 0
 for x in range(20):
     for y in range(20):
-        if (x >= 4):
-            tester = left(Euler, x, y)
+        if (x >= 3):
+            tester = left(Euler[x], y)
             if (tester > max):
                 max = tester
 
-        if (x <= 16):
-            tester = right(Euler, x, y)
+        if (x <= 15):
+            tester = right(Euler[x], y)
             if (tester > max):
                 max = tester
 
-        if (y >= 4):
+        if (y >= 3):
             tester = up(Euler, x, y)
             if (tester > max):
                 max = tester
 
-        if (y <= 16):
+        if (y <= 15):
             tester = down(Euler, x, y)
             if (tester > max):
                 max = tester
 
-        if (y >= 4 and x >= 4):
-            tester = up_left(Euler, x, y)
+        if (y >= 3 and x >= 3):
+            tester = up_left(Euler, Euler[x], y)
             if (tester > max):
                 max = tester
 
-        if (y >= 4 and x <= 16):
-            tester = up_right(Euler, x, y)
+        if (y >= 3 and x <= 15):
+            tester = up_right(Euler, Euler[x], y)
             if (tester > max):
                 max = tester
 
-        if (y <= 16 and x >= 4):
-            tester = down_left(Euler, x, y)
+        if (y <= 15 and x >= 3):
+            tester = down_left(Euler, Euler[x], y)
             if (tester > max):
                 max = tester
 
-        if (y <= 16 and x <= 16):
-            tester = down_right(Euler, x, y)
+        if (y <= 15 and x <= 15):
+            tester = down_right(Euler, Euler[x], y)
             if (tester > max):
                 max = tester
 
