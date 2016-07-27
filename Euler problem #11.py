@@ -84,32 +84,32 @@ for x in range(20):
                 max = tester
 
         if (y >= 3):
-            tester = up(x, y)
+            tester = up(Euler, x, y)
             if (tester > max):
                 max = tester
 
         if (y <= 15):
-            tester = down(x, y)
+            tester = down(Euler, x, y)
             if (tester > max):
                 max = tester
 
         if (y >= 3 and x >= 3):
-            tester = up_left(Euler[x], y)
+            tester = up_left(Euler, Euler[x], y)
             if (tester > max):
                 max = tester
 
         if (y >= 3 and x <= 15):
-            tester = up_right(Euler[x], y)
+            tester = up_right(Euler, Euler[x], y)
             if (tester > max):
                 max = tester
 
         if (y <= 15 and x >= 3):
-            tester = down_left(Euler[x], y)
+            tester = down_left(Euler, Euler[x], y)
             if (tester > max):
                 max = tester
 
         if (y <= 15 and x <= 15):
-            tester = down_right(Euler[x], y)
+            tester = down_right(Euler, Euler[x], y)
             if (tester > max):
                 max = tester
 
