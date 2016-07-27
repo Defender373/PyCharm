@@ -76,7 +76,7 @@ for y in range(20):
             if (tester > max):
                 max = tester
 
-        if (x <= 15):
+        if (x <= 16):
             tester = right(Euler[y], x)
             if (tester > max):
                 max = tester
@@ -86,8 +86,8 @@ for y in range(20):
             if (tester > max):
                 max = tester
 
-        if (y <= 15):
-            tester = down(Euler, y, x)
+        if (y <= 16):
+            tester = down(Euler, x, y)
             if (tester > max):
                 max = tester
 
@@ -96,17 +96,17 @@ for y in range(20):
             if (tester > max):
                 max = tester
 
-        if (y >= 3 and x <= 15):
+        if (y >= 3 and x <= 16):
             tester = up_right(Euler, y, x)
             if (tester > max):
                 max = tester
 
-        if (y <= 15 and x >= 3):
+        if (y <= 16 and x >= 3):
             tester = down_left(Euler, y, x)
             if (tester > max):
                 max = tester
 
-        if (x <= 15 and y <= 15):
+        if (x <= 15 and y <= 16):
             tester = down_right(Euler, y, x)
             if (tester > max):
                 max = tester
