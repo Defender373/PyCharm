@@ -82,7 +82,7 @@ for y in range(20):
                 max = tester
 
         if (y >= 3):
-            tester = up(Euler, y, x)
+            tester = up(Euler, x, y)
             if (tester > max):
                 max = tester
 
@@ -92,17 +92,17 @@ for y in range(20):
                 max = tester
 
         if (x >= 3 and y >= 3):
-            tester = up_left(Euler, y, x)
+            tester = up_left(Euler, x, y)
             if (tester > max):
                 max = tester
 
         if (y >= 3 and x <= 16):
-            tester = up_right(Euler, y, x)
+            tester = up_right(Euler, x, y)
             if (tester > max):
                 max = tester
 
         if (y <= 16 and x >= 3):
-            tester = down_left(Euler, y, x)
+            tester = down_left(Euler, x, y)
             if (tester > max):
                 max = tester
 
