@@ -27,43 +27,90 @@ print("test")
 #call up on Euler[10][11], up(Euler, 10, 11)
 #call left on Euler[10][11], left(Euler[10], 11)
 
-def up(self, array, column_index, row_index):
+def up(Euler, array, column_index, row_index):
     return array[row_index][column_index] * array[row_index - 1][column_index] * array[row_index - 2][column_index] * \
            array[row_index - 3][column_index]
 
 
-def down(self, array, column_index, row_index):
+def down(Euler, array, column_index, row_index):
     return array[row_index][column_index] * array[row_index + 1][column_index] * array[row_index + 2][column_index] * \
            array[row_index + 3][column_index]
 
 
-def left(self, row_array, column_index):
+def left(Euler, row_array, column_index):
     return row_array[column_index] * row_array[column_index - 1] * row_array[column_index - 2] * row_array[
         column_index - 3]
 
 
-def right(self, array, column_index):
+def right(Euler, row_array, column_index):
     return row_array[column_index] * row_array[column_index + 1] * row_array[column_index + 2] * row_array[
         column_index + 3]
 
 
-def up_left(self, array, column_index, row_index):
+def up_left(Euler, array, column_index, row_index):
     return array[row_index][column_index] * array[row_index - 1][column_index - 1] * array[row_index - 2][
         column_index - 2] * \
            array[row_index - 3][column_index - 3]
 
-def up_right(self, array, column_index, row_index):
+
+def up_right(Euler, array, column_index, row_index):
     return array[row_index][column_index] * array[row_index - 1][column_index + 1] * \
            array[row_index - 2][column_index + 2] * array[row_index - 3][column_index + 3]
 
 
-def down_left(self, array, column_index, row_index):
-    product = 0
+def down_left(Euler, array, column_index, row_index):
+    return array[row_index][column_index] * array[row_index - 1][column_index - 1] * \
+           array[row_index - 2][column_index - 2] * array[row_index - 3][column_index - 3]
 
-    return product
+
+def down_right(Euler, array, column_index, row_index):
+    return array[row_index][column_index] * array[row_index + 1][column_index - 1] * \
+           array[row_index + 2][column_index - 2] * array[row_index + 3][column_index - 3]
 
 
-def down_right(self, array, column_index, row_index):
-    product = 0
+max = 0
+print("Hi")
+tester = 0
+for x in range(20):
+    for y in range(20):
+        if (x >= 4):
+            tester = left(Euler, x, y)
+            if (tester > max):
+                max = tester
 
-    return product
+        if (x <= 16):
+            tester = right(Euler, x, y)
+            if (tester > max):
+                max = tester
+
+        if (y >= 4):
+            tester = up(Euler, x, y)
+            if (tester > max):
+                max = tester
+
+        if (y <= 16):
+            tester = down(Euler, x, y)
+            if (tester > max):
+                max = tester
+
+        if (y >= 4 and x >= 4):
+            tester = up_left(Euler, x, y)
+            if (tester > max):
+                max = tester
+
+        if (y >= 4 and x <= 16):
+            tester = up_right(Euler, x, y)
+            if (tester > max):
+                max = tester
+
+        if (y <= 16 and x >= 4):
+            tester = down_left(Euler, x, y)
+            if (tester > max):
+                max = tester
+
+        if (y <= 16 and x <= 16):
+            tester = down_right(Euler, x, y)
+            if (tester > max):
+                max = tester
+
+print(max)
